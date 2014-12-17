@@ -40,5 +40,8 @@ Roundtime on server: (without any form of memoization)
 Memoization can speed up your application by caching module/props combinations. In the runtime app I included a simple decorater function testing this.  
 The idea is to make a checksum of the props (or the object_list serialized to JSON) to prevent a Javascript call. I think it's a good way of caching for public web apps.
 
+## Profiling
+Simple profiling is included by adding the [django cprofile middleware](https://github.com/omarish/django-cprofile-middleware) by Omarish. By adding the ?prof parameter to URLs you can see the server roundtime.
+
 Example:  
 `checksum = hashlib.md5(props).hexdigest()`
