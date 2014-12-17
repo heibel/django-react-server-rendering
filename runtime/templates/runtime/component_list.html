@@ -1,0 +1,31 @@
+{% load pipeline %}
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Load css -->
+        {% stylesheet 'vendor' %}
+        {% stylesheet 'app' %}
+
+        <!-- Server prints frontend data here -->
+        <script id="props" type="application/json">
+            {{ props|safe }}
+        </script>
+        
+    </head>
+    <body>
+        {{ test }}
+                
+        <!-- There can't be whitespace in this container -->
+        <div id="react" class="small-8 small-centered columns">{{ var|safe }}</div>
+
+        <!-- Load app.js -->
+        {% javascript 'runtime' %}
+
+        <!-- Load React, exposed by runtime -->
+        <script type="text/javascript">
+            require('render').renderClient('app', JSON.parse(document.getElementById('props').innerHTML), 'react');
+        </script>
+        
+    </body>
+</html>

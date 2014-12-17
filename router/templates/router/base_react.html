@@ -1,0 +1,23 @@
+{% load pipeline %}
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Load css -->
+        {% stylesheet 'app' %} 
+
+        <!-- Server prints frontend data here -->
+        <script id="props" type="application/json">
+            {{ props|safe }}
+        </script>
+        
+    </head>
+    <body>
+        
+        <!-- There can't be whitespace in this container -->
+        <div id="react">{{ var|safe }}</div>
+        
+        <!-- Load app.js -->
+        {% javascript 'router' %}
+    </body>
+</html>

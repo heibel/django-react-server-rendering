@@ -1,0 +1,42 @@
+[
+    {
+        "model": "component.component",
+        "pk": 1,
+        "fields": {
+            "title": "John",
+            "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Curabitur blandit tempus porttitor."
+        }
+    },
+    {
+        "model": "component.component",
+        "pk": 2,
+        "fields": {
+            "title": "Paul",
+            "description": "Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+        }
+    },
+    {
+        "model": "component.component",
+        "pk": 3,
+        "fields": {
+            "title": "Ringo",
+            "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Curabitur blandit tempus porttitor."
+        }
+    },
+    {
+        "model": "component.component",
+        "pk": 4,
+        "fields": {
+            "title": "Elzas",
+            "description": "Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+        }
+    },
+    {
+        "model": "component.component",
+        "pk": 5,
+        "fields": {
+            "title": "Coolio",
+            "description": "Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+        }
+    }
+]
