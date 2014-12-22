@@ -4,8 +4,7 @@
     <head>
 
         <!-- Load css -->
-        {% stylesheet 'vendor' %}
-        {% stylesheet 'app' %}
+        {% stylesheet 'flux' %}
 
         <!-- Server prints frontend data here -->
         <script id="props" type="application/json">
@@ -16,10 +15,10 @@
     <body>
                 
         <!-- There can't be whitespace in this container -->
-        <div id="react" class="small-8 small-centered columns">{{ var|safe }}</div>
+        <div id="react">{{ var|safe }}</div>
 
         <!-- Load app.js -->
-        {% javascript 'runtime' %}
+        {% javascript 'flux' %}
 
         <!-- Load React, exposed by runtime -->
         <script type="text/javascript">

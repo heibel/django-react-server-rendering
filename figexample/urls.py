@@ -10,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^components/', include('component.urls')),
     url(r'^router/', include('router.urls')),
     url(r'^runtime/', include('runtime.urls')),
+    url(r'^flux/', include('flux.urls')),
 )

@@ -1,0 +1,37 @@
+[
+    {
+        "model": "flux.component",
+        "pk": 1,
+        "fields": {
+            "description": "Nullam id dolor id nibh ultricies vehicula ut id elit."
+        }
+    },
+    {
+        "model": "flux.component",
+        "pk": 2,
+        "fields": {
+            "description": "Donec sed odio dui."
+        }
+    },
+    {
+        "model": "flux.component",
+        "pk": 3,
+        "fields": {
+            "description": "Maecenas faucibus mollis interdum."
+        }
+    },
+    {
+        "model": "flux.component",
+        "pk": 4,
+        "fields": {
+            "description": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+        }
+    },
+    {
+        "model": "flux.component",
+        "pk": 5,
+        "fields": {
+            "description": "Vestibulum id ligula porta felis euismod semper."
+        }
+    }
+]

@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'component',
     'router',
     'runtime',
+    'flux',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -117,6 +118,9 @@ PIPELINE_CSS = {
     },
     'app': {
         'output_filename': 'css/app.css'
+    },
+    'flux': {
+        'output_filename': 'css/flux.css'
     }
 }
 
@@ -129,5 +133,8 @@ PIPELINE_JS = {
     },
     'runtime': {
         'output_filename': 'js/runtime.js',
+    },
+    'flux': {
+        'output_filename': 'js/bundle.min.js',
     }
 }

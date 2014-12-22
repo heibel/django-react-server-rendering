@@ -10,19 +10,6 @@ from django.views.generic import ListView
 from .models import Component
 
 
-def memoize(func):
-    cache = {}
-    
-    def helper(cls, app, props):
-        checksum = hashlib.md5(props).hexdigest()     
-        if checksum not in cache:
-            cache[checksum] = func(cls, app, props)
-
-        return cache[checksum]
-    
-    return helper
-
-
 class DjangoReact(object):
     """
     Expose bundled js-file to runtime
@@ -34,20 +21,14 @@ class DjangoReact(object):
     """
     Returns the rendered html
     """
-    @memoize        
     def render_page(self, app, props):
        
         return self.runtime.eval(
             'require("render").renderServer("%s", %s)' % (app, props))
 
-    def render_routed(self, router, route, props):
-        
-        return self.runtime.eval(
-            'require("render").renderRouted("%s", "%s", %s)' % (router, route, props))
-
 
 # Initialize our render class        
-djangoReact = DjangoReact('runtime.js', 'runtime/js/')
+djangoReact = DjangoReact('bundle.min.js', 'flux/static/js/')
 
 
 class ComponentListView(ListView):
@@ -61,10 +42,15 @@ class ComponentListView(ListView):
         path = self.request.path
         app = self.react_app
 
+        try:
+            var = djangoReact.render_page(app, props)
+        except e:
+            var = ''
+
+
         context.update({
-            'var': djangoReact.render_page(app, props),
+            'var': var,
             'props': props,
-            # 'var': djangoReact.render_routed('routes', path, props),
         })
         
         return context
