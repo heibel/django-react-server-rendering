@@ -4,3 +4,4 @@ requests
 django-pipeline
 django-cprofile-middleware
 PyExecJS
+zerorpc

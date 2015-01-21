@@ -3,9 +3,10 @@ import hashlib
 import execjs
 
 from django.core import serializers
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView, UpdateView
 
 from .models import Component
 
@@ -39,14 +40,17 @@ class ComponentListView(ListView):
         context = super(ComponentListView, self).get_context_data(**kwargs)
 
         props = serializers.serialize('json', self.object_list)
-        path = self.request.path
         app = self.react_app
+
+        urls = {
+            'create': reverse('flux:component_create'),
+            'update': reverse('flux:component_update'),
+        }
 
         try:
             var = djangoReact.render_page(app, props)
         except e:
-            var = ''
-
+            var = None
 
         context.update({
             'var': var,
@@ -54,3 +58,10 @@ class ComponentListView(ListView):
         })
         
         return context
+
+
+class ComponentCreateView(CreateView):
+    pass
+
+class ComponentUpdateView(UpdateView):
+    pass

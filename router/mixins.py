@@ -1,5 +1,6 @@
 import json
 import requests
+import zerorpc
 
 from django.core import serializers
 from django.http import HttpResponse
@@ -31,16 +32,24 @@ class ReactServerMixin(object):
             'props': props,
         }
         
-        request = None
-        error = None
+        content = None
+        request = None  
+        error = True
         
-        try:
-            request = requests.get(NODE_URL + path, params=payload)
-        except ConnectionError as e:
-            error = e
+        # try:
+        #     request = requests.get(NODE_URL + path, params=payload)
+        #     content = request.content
+        # except ConnectionError as e:
+        #     error = e
+
+        c = zerorpc.Client()
+        c.connect("tcp://127.0.0.1:4242")
+
+        content = c.render(path, props)
+
 
         context.update({
-            'var': (error if error else request.content),
+            'var': content if content else error,
             'props': props,
         })
         
